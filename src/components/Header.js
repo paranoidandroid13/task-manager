@@ -1,42 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from './assets/img/logo.svg'
 import './Header.css'
 
 const Header = () => {
-  return (
-    // <header>
-    //   <nav className="navbar navbar-expand-md fixed-top border bg-primary py-4">
-    //     <div className="container ">
-    //       <div className="row w-100">
-    //         <div className="col-xl-2">
-    //           <a className="navbar-brand" href="#">
-    //             <img src={logo} alt="" />
-    //           </a>
-    //         </div>
-    //         <div className="collapse navbar-collapse px-0" id="navbarCollapse">
-    //           <div className="col-xl-9 border">
-    //             <div className="row pl-4">
-    //               <div className="col-xl-2 px-0">profile</div>
-    //               <div className="col-xl-2 px-0">profile</div>
-    //               <div className="col-xl-2 px-0">profile</div>
-    //             </div>
-    //           </div>
-    //           <div className="col-xl-3 m-0 pl-5">
-    //           <form className="form-inline mt-2 mt-md-0">
-    //             <input
-    //               className="form-control mr-sm-2 rounded-0"
-    //               type="text"
-    //               placeholder="search..."
-    //               aria-label="Search"
-    //             ></input>
-    //           </form>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </nav>
-    // </header>
+  const [searchValue, setSearchValue] = useState('')
+  const onChange = e => {
+    setSearchValue(e.target.value)
+  }
 
+  const taskState = ['unstarted', 'in progress', 'completed']
+  const renderTaskList = () => {
+    
+  }
+
+  return (
     <header className="header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container py-3">
@@ -78,6 +55,8 @@ const Header = () => {
                 type="search"
                 placeholder="search"
                 aria-label="Search"
+                value={searchValue}
+                onChange={onChange}
               />
             </form>
             <ul className="navbar-nav mr-left mt-2 mt-lg-0">
