@@ -1,3 +1,8 @@
 .task--status {
-  font-size: 0.85rem;
+  font-variant: small-caps;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 21px;
+
 }

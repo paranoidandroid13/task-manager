@@ -20,6 +20,7 @@ const TasksPage = (props) => {
   const renderTaskLists = () => {
     const {tasks} = props
     return tasks_statuses.map((status, id) => {
+
       const statusTasks = tasks.filter((task) => task.status === status)
       return <div className="col-md-4 card bg-primary" key={id}>
           <TaskList key={status} status={status} tasks={statusTasks} />

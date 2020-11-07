@@ -1,3 +1,7 @@
-/* .card {
-  width: 18rem;
-} */
+.card-text {
+  font-weight: 400;
+}
+
+.border-bottom {
+  border-bottom: 3px solid green!important;
+}
