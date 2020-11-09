@@ -13,8 +13,8 @@ function App(props) {
     props.dispatch(editTask(id, {status}))
   }
 
-  const onCreateTask = ({title, description}) => {
-    props.dispatch(createTask({title, description}))
+  const onCreateTask = ({ title, description }) => {
+    props.dispatch(createTask({ title, description }))
   }
 
   return (

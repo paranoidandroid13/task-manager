@@ -7,8 +7,8 @@ const tasks_statuses = ['unstarted', 'in progress', 'completed']
 
 const TasksPage = (props) => {
 
-  const [taskName, setTaskName] = useState('')
-  const [taskDescr, setTaskDescr] = useState('')
+  const [title, setTaskName] = useState('')
+  const [description, setTaskDescr] = useState('')
 
   const onChangeTitle = e => {
     setTaskName(e.target.value)
@@ -18,12 +18,18 @@ const TasksPage = (props) => {
     setTaskDescr(e.target.value);
   };
 
+  const resetForm = () => {
+    setTaskName('')
+    setTaskDescr('')
+  }
+
   const onCreateTask = (e) => {
     e.preventDefault();
     props.onCreateTask({
       title,
       description
     })
+    resetForm()
   }
 
   const renderTaskLists = () => {
@@ -56,7 +62,7 @@ const TasksPage = (props) => {
                     className="task__name form-control rounded-0"
                     type="text"
                     placeholder="Task name"
-                    value={taskName}
+                    value={title}
                     onChange={onChangeTitle}
                   />
                 </div>
@@ -69,14 +75,14 @@ const TasksPage = (props) => {
                     id=""
                     cols="30"
                     rows="3"
-                    value={taskDescr}
+                    value={description}
                     onChange={onChangeDescr}
                   ></textarea>
                 </div>
               </form>
 
               <div className="d-flex p-0 border">
-                {/* <button onSubmit={onCreateTask}> */}
+                {/* <button type="submit" onSubmit={onCreateTask}> */}
                 <a className="post-task__button ml-auto" href="#">
                   <img src={post_task} alt="" className="post-task__button" />
                 </a>
