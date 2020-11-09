@@ -9,6 +9,7 @@ const TasksPage = (props) => {
 
   const [taskName, setTaskName] = useState('')
   const [taskDescr, setTaskDescr] = useState('')
+
   const onChangeTitle = e => {
     setTaskName(e.target.value)
   }
@@ -17,50 +18,69 @@ const TasksPage = (props) => {
     setTaskDescr(e.target.value);
   };
 
+  const onCreateTask = (e) => {
+    e.preventDefault();
+    props.onCreateTask({
+      title,
+      description
+    })
+  }
+
   const renderTaskLists = () => {
     const {tasks} = props
     return tasks_statuses.map((status, id) => {
 
       const statusTasks = tasks.filter((task) => task.status === status)
-      return <div className="col-md-4 card bg-primary" key={id}>
-          <TaskList key={status} status={status} tasks={statusTasks} />
+      return (
+        <div className="col-md-4 card bg-primary" key={id}>
+          <TaskList
+            key={status}
+            status={status}
+            tasks={statusTasks}
+            onStatusChange={props.onStatusChange}
+          />
         </div>
+      );
     })
   }
 
   return (
-    <section className="hero pt-5">
+    <section className="hero pt-5 ">
       <div className="container">
         <div className="row">
           <div className="col-md-4 border">
             <div className="add_task">
-              <div className="form-group">
-                <input
-                  className="task__name form-control rounded-0"
-                  type="text"
-                  placeholder="Task name"
-                  value={taskName}
-                  onChange={onChangeTitle}
-                />
-              </div>
+              <form onSubmit={onCreateTask}>
+                <div className="form-group">
+                  <input
+                    className="task__name form-control rounded-0"
+                    type="text"
+                    placeholder="Task name"
+                    value={taskName}
+                    onChange={onChangeTitle}
+                  />
+                </div>
 
-              <div className="form-group">
-                <textarea
-                  className="form-control rounded-0"
-                  placeholder="Task descr"
-                  name=""
-                  id=""
-                  cols="30"
-                  rows="3"
-                  value={taskDescr}
-                  onChange={onChangeDescr}
-                ></textarea>
-              </div>
+                <div className="form-group">
+                  <textarea
+                    className="form-control rounded-0"
+                    placeholder="Task descr"
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="3"
+                    value={taskDescr}
+                    onChange={onChangeDescr}
+                  ></textarea>
+                </div>
+              </form>
 
               <div className="d-flex p-0 border">
+                {/* <button onSubmit={onCreateTask}> */}
                 <a className="post-task__button ml-auto" href="#">
                   <img src={post_task} alt="" className="post-task__button" />
                 </a>
+                {/* </button> */}
               </div>
             </div>
           </div>

@@ -1,7 +1,85 @@
 .card-text {
+
   font-weight: 400;
+  color: white;
 }
 
 .border-bottom {
-  border-bottom: 3px solid green!important;
+  border-bottom: 3px solid white!important;
+  padding-bottom: 0.3rem;
+  width: 50%
 }
+
+.card-title {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.card-border {
+  border: 2px solid black;
+}
+
+
+
+.selectStatus {
+  border: none;
+  background: rgba(0,0,0,0);
+  color: white;
+  cursor: pointer;
+  -moz-appearance: none;
+
+  /* selectStatus::before,
+  selectStatus::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    display: block;
+    width: 10px;
+    height: 2px;
+
+    transition: all 0.3s ease-out;
+
+    background-color: #333333; */
+}
+
+
+/*
+.selectForm {
+  position: relative;
+} */
+/*
+selectStatus::before {
+   content: "";
+
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    display: block;
+    width: 10px;
+    height: 2px;
+
+    transition: all 0.3s ease-out;
+
+    background-color: #333333;
+}
+
+selectStatus::after {
+     content: "";
+
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    display: block;
+    width: 10px;
+    height: 2px;
+
+    transition: all 0.3s ease-out;
+
+    background-color: #333333;
+} */

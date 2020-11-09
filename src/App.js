@@ -5,16 +5,26 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Header from './components/Header'
 import TasksPage from './components/TasksPage'
-import TaskList from './components/TaskList'
-import Task from './components/Task'
-import Unsplash from './components/Unsplash'
+import { editTask, createTask } from "./actions/index";
 
 function App(props) {
+
+  const onStatusChange = (id, status) => {
+    props.dispatch(editTask(id, {status}))
+  }
+
+  const onCreateTask = ({title, description}) => {
+    props.dispatch(createTask({title, description}))
+  }
 
   return (
     <div className="App">
       <Header />
-      <TasksPage tasks={props.tasks} />
+      <TasksPage
+        tasks={props.tasks}
+        onStatusChange={onStatusChange}
+        onCreateTask={onCreateTask}
+      />
     </div>
   );
 }

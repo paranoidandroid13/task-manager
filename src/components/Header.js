@@ -10,7 +10,7 @@ const Header = () => {
 
   const taskState = ['unstarted', 'in progress', 'completed']
   const renderTaskList = () => {
-    
+
   }
 
   return (
@@ -49,6 +49,7 @@ const Header = () => {
                 </a>
               </li>
             </ul>
+
             <form className="form-inline  my-2 my-lg-0">
               <input
                 className="form-control rounded-0 mr-sm-2"
