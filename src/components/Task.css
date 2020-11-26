@@ -83,3 +83,7 @@ selectStatus::after {
 
     background-color: #333333;
 } */
+
+.card-body__delete {
+  cursor: pointer;
+}

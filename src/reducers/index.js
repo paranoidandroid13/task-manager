@@ -1,5 +1,6 @@
 import { EDIT_TASK } from"../actions/types";
 import { CREATE_TASK } from '../actions/types'
+import { DELETE_TASK } from '../actions/types'
 
 const initialState = [
 
@@ -23,7 +24,14 @@ const tasks = (state = {tasks: initialState}, action) => {
       tasks: state.tasks.concat(action.payload),
     }
   }
-  return state
+
+  if (action.type === DELETE_TASK) {
+    return {
+      tasks: state.tasks.filter((task) => task.id !== action.id)
+    }
+  }
+
+  return state;
 
 
 }

@@ -1,8 +1,13 @@
 body, html {
-  color: black;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 1rem;
+  background-color: black!important;
+  background-image: url(./assets/img/gradient.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+
+  position:static;
 }
 
 button:active, button:focus {
@@ -20,10 +25,26 @@ button::-moz-focus-inner {
 .form-control:focus {
     border-color: rgba(40, 202, 251, 0.8) !important;
     box-shadow: 0 1px 1px rgba(121, 40, 251, 0.075) inset, 0 0 8px rgba(42, 220, 255, 0.6) !important;
+    background-color: black;
+    color: white;
 }
 
 .task__name {
-  border-width: 2px;
-  border-color: black;
+  color: white;
+  background-color: black;
+  border: 2px solid white;
 }
 
+/* .gradient {
+  height: 25rem;
+} */
+
+.task__desc {
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+}
+
+.task_statuses {
+  background-color: rgba(0,0,0, 0.1)
+}

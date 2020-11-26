@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Header from './components/Header'
 import TasksPage from './components/TasksPage'
-import { editTask, createTask } from "./actions/index";
+import { editTask, createTask, deleteTask } from "./actions/index";
 
 function App(props) {
 
@@ -17,6 +17,10 @@ function App(props) {
     props.dispatch(createTask({ title, description }))
   }
 
+  const onDeleteTask = (id) => {
+    props.dispatch(deleteTask(id))
+  }
+
   return (
     <div className="App">
       <Header />
@@ -24,6 +28,7 @@ function App(props) {
         tasks={props.tasks}
         onStatusChange={onStatusChange}
         onCreateTask={onCreateTask}
+        onDeleteTask={onDeleteTask}
       />
     </div>
   );

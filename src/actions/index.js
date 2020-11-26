@@ -1,5 +1,6 @@
 import { EDIT_TASK } from "./types"
 import { CREATE_TASK } from './types'
+import { DELETE_TASK } from './types'
 
 const shortid = require('shortid')
 
@@ -22,6 +23,14 @@ export const createTask = ({ title, description }) => {
       description,
       status: 'unstarted',
     }
+
+  };
+}
+
+export const deleteTask = (id) => {
+  return {
+    type: DELETE_TASK,
+    id,
 
   };
 }

@@ -28,7 +28,11 @@ body, html {
   font-weight: bold;
   font-size: 1rem;
 }
- 
-.navbar-light .navbar-nav .nav-link {
-  color: black;
+
+.header {
+  background-color: rgba(0,0,0,0.1)
+}
+
+.nav-link {
+  color: white;
 }

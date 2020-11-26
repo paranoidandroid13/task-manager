@@ -15,8 +15,8 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container py-3">
+      <nav className="navbar navbar-expand-lg">
+        <div className="container pt-3">
           <button
             className="navbar-toggler"
             type="button"
@@ -50,7 +50,7 @@ const Header = () => {
               </li>
             </ul>
 
-            <form className="form-inline  my-2 my-lg-0">
+            {/* <form className="form-inline  my-2 my-lg-0">
               <input
                 className="form-control rounded-0 mr-sm-2"
                 type="search"
@@ -59,7 +59,7 @@ const Header = () => {
                 value={searchValue}
                 onChange={onChange}
               />
-            </form>
+            </form> */}
             <ul className="navbar-nav mr-left mt-2 mt-lg-0">
               <li className="nav-item mx-3">
                 <a className="nav-link" href="#">

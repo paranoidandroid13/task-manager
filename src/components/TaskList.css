@@ -6,3 +6,11 @@
   line-height: 21px;
 
 }
+
+.task-statuses__block {
+  background-color: rgba(0, 0, 0, 0)
+}
+
+.task--status {
+  color: white;
+}
